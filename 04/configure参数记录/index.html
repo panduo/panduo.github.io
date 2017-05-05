@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>测试文章 | 潘铎的个人博客</title>
+  <title>./configure参数记录 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to StackEdit! Hey! I’m your first Markdown document in StackEdit[^stackedit]. Don’t delete me, I’m very helpful! I can be recovered anyway in the Utils tab of the  Settings dialog.  Documents">
+  <meta name="description" content="列表如下（部分参数未得到解释）： 指定 PHP 安装目录  --prefix=/usr/local/php   指定php.ini位置  --with-config-file-path=/usr/local/php/etc   MySQL安装目录，对mysql的支持  --with-mysql=/usr/local/mysql  mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章">
-<meta property="og:url" content="http://yoursite.com/02/Hexo/index.html">
+<meta property="og:title" content=".&#x2F;configure参数记录">
+<meta property="og:url" content="http://yoursite.com/04/configure参数记录/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:description" content="Welcome to StackEdit! Hey! I’m your first Markdown document in StackEdit[^stackedit]. Don’t delete me, I’m very helpful! I can be recovered anyway in the Utils tab of the  Settings dialog.  Documents">
-<meta property="og:updated_time" content="2017-05-02T09:38:35.000Z">
+<meta property="og:description" content="列表如下（部分参数未得到解释）： 指定 PHP 安装目录  --prefix=/usr/local/php   指定php.ini位置  --with-config-file-path=/usr/local/php/etc   MySQL安装目录，对mysql的支持  --with-mysql=/usr/local/mysql  mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL">
+<meta property="og:updated_time" content="2017-05-04T08:04:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试文章">
-<meta name="twitter:description" content="Welcome to StackEdit! Hey! I’m your first Markdown document in StackEdit[^stackedit]. Don’t delete me, I’m very helpful! I can be recovered anyway in the Utils tab of the  Settings dialog.  Documents">
+<meta name="twitter:title" content=".&#x2F;configure参数记录">
+<meta name="twitter:description" content="列表如下（部分参数未得到解释）： 指定 PHP 安装目录  --prefix=/usr/local/php   指定php.ini位置  --with-config-file-path=/usr/local/php/etc   MySQL安装目录，对mysql的支持  --with-mysql=/usr/local/mysql  mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -153,32 +153,58 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-configure参数记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      测试文章
+      ./configure参数记录
     </h1>
   
 
         
-        <a href="/02/Hexo/" class="archive-article-date">
-  	<time datetime="2017-05-02T08:50:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+        <a href="/04/configure参数记录/" class="archive-article-date">
+  	<time datetime="2017-05-04T07:56:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h1 id="Welcome-to-StackEdit"><a href="#Welcome-to-StackEdit" class="headerlink" title="Welcome to StackEdit!"></a>Welcome to StackEdit!</h1><hr>
-<p>Hey! I’m your first Markdown document in <strong>StackEdit</strong>[^stackedit]. Don’t delete me, I’m very helpful! I can be recovered anyway in the <strong>Utils</strong> tab of the <i class="icon-cog"></i> <strong>Settings</strong> dialog.</p>
-<hr>
-<h2 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">function</span> route(pathname,handle,response,request)&#123;</div><div class="line">	console.log(<span class="string">"About to route a request for "</span> + pathname);</div><div class="line">	<span class="keyword">if</span>(typeof handle[pathname] === <span class="string">'function'</span>)&#123;</div><div class="line">		<span class="built_in">return</span> handle[pathname](response,request);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		console.log(<span class="string">"No request handler found for "</span> + pathname);</div><div class="line">		response.writeHead(404, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span>&#125;);</div><div class="line">      	response.write(<span class="string">"404 Not found"</span>);</div><div class="line">      	response.end();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.route = route;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">$ asdkjhfsjlkajdlkasd</div></pre></td></tr></table></figure>
+        <h3 id="列表如下（部分参数未得到解释）："><a href="#列表如下（部分参数未得到解释）：" class="headerlink" title="列表如下（部分参数未得到解释）："></a>列表如下（部分参数未得到解释）：</h3><ul>
+<li>指定 PHP 安装目录</li>
+</ul>
+<p>--prefix=/usr/local/php </p>
+<ul>
+<li>指定php.ini位置</li>
+</ul>
+<p>--with-config-file-path=/usr/local/php/etc </p>
+<ul>
+<li>MySQL安装目录，对mysql的支持</li>
+</ul>
+<p>--with-mysql=/usr/local/mysql</p>
+<ul>
+<li>mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL事务，而且还可以使访问数据库工作变得更加稳定。</li>
+</ul>
+<p>--with-mysqli=/usr/local/mysql/bin/mysql_config   </p>
+<ul>
+<li>整合 apache，apxs功能是使用mod_so中的LoadModule指令，加载指定模块到 apache，要求 apache 要打开SO模块</li>
+</ul>
+<p>--with-apxs2=/usr/local/apache/bin/apxs </p>
+<ul>
+<li>选项指令 –with-iconv-dir 用于 PHP 编译时指定 iconv 在系统里的路径，否则会扫描默认路径。</li>
+</ul>
+<p>--with-iconv-dir=/usr/local </p>
+<blockquote>
+<p>--with-freetype-dir   打开对freetype字体库的支持<br> --with-jpeg-dir   打开对jpeg图片的支持<br> --with-png-dir   打开对png图片的支持<br> --with-zlib-dir   打开zlib库的支持，用于http压缩传输<br> --with-libxml-dir   打开libxml2库的支持<br> --disable-rpath    关闭额外的运行库文件<br> --enable-bcmath    打开图片大小调整,用到zabbix监控的时候用到了这个模块<br> --enable-shmop –enable-sysvsem  这样就使得你的PHP系统可以处理相关的IPC函数了。<br> --enable-inline-optimization  优化线程<br> --with-curl    打开curl浏览工具的支持<br> --with-curlwrappers    运用curl工具打开url流<br> --enable-mbregex<br> --enable-fpm 打上PHP-fpm 补丁后才有这个参数，CGI方式安装的启动程序<br> --enable-mbstring    多字节，字符串的支持<br> --with-mcrypt                    mcrypt算法扩展<br> --with-mhash                     mhash算法扩展<br> --with-gd    打开gd库的支持<br> --enable-gd-native-ttf   支持TrueType字符串函数库<br> --with-openssl      openssl的支持，加密传输https时用到的<br> --enable-pcntl   freeTDS需要用到的，可能是链接mssql 才用到<br> --enable-sockets     打开 sockets 支持<br> --with-xmlrpc    打开xml-rpc的C语言<br> --enable-zip   打开对zip的支持<br> --enable-ftp   打开ftp的支持  </p>
+<p>--with-bz2    打开对bz2文件的支持<br> --without-iconv   关闭iconv函数，字符集间的转换<br> --with-ttf     打开freetype1.*的支持，可以不加了<br> --with-xsl     打开XSLT 文件支持，扩展了libXML2库 ，需要libxslt软件<br> --with-gettext     打开gnu 的gettext 支持，编码库用到<br> --with-pear    打开pear命令的支持，PHP扩展用的<br> --enable-calendar    打开日历扩展功能<br> --enable-exif    图片的元数据支持<br> --enable-magic-quotes    魔术引用的支持 </p>
+<p>--disable-debug    关闭调试模式<br>--with-mime-magic=/usr/share/file/magic.mime      魔术头文件位置</p>
+</blockquote>
+<h2 id="CGI方式安装才用的参数"><a href="#CGI方式安装才用的参数" class="headerlink" title="CGI方式安装才用的参数"></a>CGI方式安装才用的参数</h2><blockquote>
+<p>--enable-fastCGI            支持fastcgi方式启动PHP<br>--enable-force-CGI-redirect        重定向方式启动PHP<br>--with-ncurses         支持ncurses 屏幕绘制以及基于文本终端的图形互动功能的动态库<br>--with-gmp  应该是支持一种规范<br>--enable-dbase                     建立DBA 作为共享模块<br>--with-pcre-dir=/usr/local/bin/pcre-config      perl的正则库案安装位置<br>--disable-dmalloc<br>--with-gdbm                     dba的gdbm支持<br>--enable-sigchild<br>--enable-sysvshm<br>--enable-zend-multibyte         支持zend的多字节<br>--enable-wddx<br>--enable-soap</p>
+</blockquote>
 
       
 
@@ -258,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/02/Hexo/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/04/configure参数记录/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +298,18 @@
   
 <nav id="article-nav">
   
-    <a href="/04/PHP-UML创建项目类图/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/04/PHP性能分析工具-xhprof/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          PHP_UML创建项目类图
+          PHP性能分析工具:xhprof
         
       </div>
     </a>
   
   
-    <a href="/02/阻塞与同步/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">阻塞与同步</div>
+    <a href="/04/PHP-UML创建项目类图/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP_UML创建项目类图</div>
       <i class="icon-circle-right"></i>
     </a>
   
