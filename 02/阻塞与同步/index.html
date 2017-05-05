@@ -10,12 +10,13 @@
   <title>阻塞与同步 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作者：严肃链接：https://www.zhihu.com/question/19732473/answer/20851256来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 “阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。 1.同步和异步关注的是消息通信机制 (synchronous communication/ asy">
+<meta name="keywords" content="多线程,阻塞,同步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阻塞与同步">
 <meta property="og:url" content="https://panduo.github.io/02/阻塞与同步/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
 <meta property="og:description" content="作者：严肃链接：https://www.zhihu.com/question/19732473/answer/20851256来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 “阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。 1.同步和异步关注的是消息通信机制 (synchronous communication/ asy">
-<meta property="og:updated_time" content="2017-05-02T09:06:31.000Z">
+<meta property="og:updated_time" content="2017-05-05T06:26:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阻塞与同步">
 <meta name="twitter:description" content="作者：严肃链接：https://www.zhihu.com/question/19732473/answer/20851256来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 “阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。 1.同步和异步关注的是消息通信机制 (synchronous communication/ asy">
@@ -180,6 +181,7 @@
 <blockquote>
 <p>2.阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态.  </p>
 </blockquote>
+<a id="more"></a>
 <p>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。<br>还是上面的例子，你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果，如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了， 当然你也要偶尔过几分钟check一下老板有没有返回结果。在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。如果是关心blocking IO/ asynchronous IO, 参考  Unix Network Programming View Book</p>
 <p>作者：愚抄<br>链接：<a href="https://www.zhihu.com/question/19732473/answer/23434554" target="_blank" rel="external">https://www.zhihu.com/question/19732473/answer/23434554</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <blockquote>
@@ -194,6 +196,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">阻塞</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">同步</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -392,6 +413,62 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">类图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">阻塞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

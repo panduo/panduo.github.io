@@ -10,13 +10,14 @@
   <title>PHP_UML创建项目类图 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="PHP_UML可以用来将项目转化为xmi文件,再通过uml工具将其转化为UML PEAR环境配置若当前有不止一个php版本如7.0/5.5 使用php-version转换php版本1$ php-version 5.5.38 或修改用户根目录下.bashrc1source $(brew --prefix php-version)/php-version.sh &amp;amp;&amp;amp; php-versi">
+<meta name="keywords" content="php,PHP_UML,uml">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP_UML创建项目类图">
 <meta property="og:url" content="https://panduo.github.io/04/PHP-UML创建项目类图/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
 <meta property="og:description" content="PHP_UML可以用来将项目转化为xmi文件,再通过uml工具将其转化为UML PEAR环境配置若当前有不止一个php版本如7.0/5.5 使用php-version转换php版本1$ php-version 5.5.38 或修改用户根目录下.bashrc1source $(brew --prefix php-version)/php-version.sh &amp;amp;&amp;amp; php-versi">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNbRwly1ff9cpkc6wej31150n0gv6.jpg">
-<meta property="og:updated_time" content="2017-05-04T07:19:13.000Z">
+<meta property="og:updated_time" content="2017-05-05T06:21:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP_UML创建项目类图">
 <meta name="twitter:description" content="PHP_UML可以用来将项目转化为xmi文件,再通过uml工具将其转化为UML PEAR环境配置若当前有不止一个php版本如7.0/5.5 使用php-version转换php版本1$ php-version 5.5.38 或修改用户根目录下.bashrc1source $(brew --prefix php-version)/php-version.sh &amp;amp;&amp;amp; php-versi">
@@ -178,6 +179,7 @@
 <h2 id="PEAR环境配置"><a href="#PEAR环境配置" class="headerlink" title="PEAR环境配置"></a>PEAR环境配置</h2><p>若当前有不止一个php版本如7.0/5.5 使用php-version转换php版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php-version 5.5.38</div></pre></td></tr></table></figure></p>
 <p>或修改用户根目录下.bashrc<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> $(brew --prefix php-version)/php-version.sh &amp;&amp; php-version 5</div></pre></td></tr></table></figure></p>
 <p>之后重新加载配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="安装PEAR："><a href="#安装PEAR：" class="headerlink" title="安装PEAR："></a>安装PEAR：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ sudo php /usr/lib/php/install-pear-nozlib.phar</div><div class="line">$ sudo pear config-set php_ini /usr/<span class="built_in">local</span>/etc/php/5.5/php.ini</div><div class="line">$ sudo pear upgrade-all</div><div class="line"></div><div class="line">$ pear version</div><div class="line"></div><div class="line">PEAR Version: 1.9.4</div><div class="line">PHP Version: 5.5.38</div><div class="line">Zend Engine Version: 2.5.0</div><div class="line">Running on: Darwin panduodeMacBook-Air.local 16.0.0 Darwin Kernel Version 16.0.0: Mon Aug 29 17:56:20 PDT 2016; root:xnu-3789.1.32~3/RELEASE_X86_64 x86_64</div></pre></td></tr></table></figure>
 <h2 id="修改php-ini中include-path"><a href="#修改php-ini中include-path" class="headerlink" title="修改php.ini中include_path"></a>修改php.ini中include_path</h2><p>添加”:/usr/local/Cellar/php55/5.5.38_11/lib/php/pear”<br>重启apache</p>
 <h2 id="安装PHP-UML"><a href="#安装PHP-UML" class="headerlink" title="安装PHP_UML"></a>安装PHP_UML</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pear install PHP_UML</div></pre></td></tr></table></figure>
@@ -194,6 +196,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PHP_UML</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -392,6 +413,62 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">类图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">阻塞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

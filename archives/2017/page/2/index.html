@@ -7,22 +7,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://panduo.github.io">
-  <title>PHP性能分析工具:xhprof | 潘铎的个人博客</title>
+  <title>Archives: 2017 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装下载 http://pecl.php.net/get/xhprof-0.9.3.tgz 解压123456$ cd ~/Download/xhprof/.../extension$ /.../phpize$ ./configure --whith-php-config=/.../php-config$ make$ make test$ sudo make install 配置php.ini将.s">
-<meta name="keywords" content="PHP,xhprof,性能">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PHP性能分析工具:xhprof">
-<meta property="og:url" content="https://panduo.github.io/04/PHP性能分析工具-xhprof/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="潘铎的个人博客">
+<meta property="og:url" content="https://panduo.github.io/archives/2017/page/2/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:description" content="安装下载 http://pecl.php.net/get/xhprof-0.9.3.tgz 解压123456$ cd ~/Download/xhprof/.../extension$ /.../phpize$ ./configure --whith-php-config=/.../php-config$ make$ make test$ sudo make install 配置php.ini将.s">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNbRwly1ff9f4petzpj311q0f4dhu.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNbRwly1ff9frp9ew8j30ye0o40x7.jpg">
-<meta property="og:updated_time" content="2017-05-05T06:21:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP性能分析工具:xhprof">
-<meta name="twitter:description" content="安装下载 http://pecl.php.net/get/xhprof-0.9.3.tgz 解压123456$ cd ~/Download/xhprof/.../extension$ /.../phpize$ ./configure --whith-php-config=/.../php-config$ make$ make test$ sudo make install 配置php.ini将.s">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006tNbRwly1ff9f4petzpj311q0f4dhu.jpg">
+<meta name="twitter:title" content="潘铎的个人博客">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -156,180 +148,125 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-PHP性能分析工具-xhprof" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      PHP性能分析工具:xhprof
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/02/Hexo/" class="archive-article-date">
+  	<time datetime="2017-05-02T08:50:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/02/Hexo/">测试文章</a>
     </h1>
   
 
-        
-        <a href="/04/PHP性能分析工具-xhprof/" class="archive-article-date">
-  	<time datetime="2017-05-04T08:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-04</time>
-</a>
-        
-      </header>
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>下载 <a href="http://pecl.php.net/get/xhprof-0.9.3.tgz" target="_blank" rel="external">http://pecl.php.net/get/xhprof-0.9.3.tgz</a> 解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/Download/xhprof/.../extension</div><div class="line">$ /.../phpize</div><div class="line">$ ./configure --whith-php-config=/.../php-config</div><div class="line">$ make</div><div class="line">$ make <span class="built_in">test</span></div><div class="line">$ sudo make install</div></pre></td></tr></table></figure></p>
-<h2 id="配置php-ini"><a href="#配置php-ini" class="headerlink" title="配置php.ini"></a>配置php.ini</h2><p>将.so扩展加入<br>另加入 xhprof.output_dir=/tmp/xhprof //xhprof的分析日志目录</p>
-<p>重启apache 查看phpinfo</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>把源码包中的 xhprof_html 和 xhprof_lib 文件夹拷贝到自己的监控项目中 如~/Sites/xhprof<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">xhprof_enable(); //开启监测 </div><div class="line">//xhprof_enable(XHPROF_FLAGS_NO_BUILTINS); 不记录内置的函数 </div><div class="line">//xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY); 同时分析CPU和Mem的开销 </div><div class="line"> </div><div class="line">//要测试的代码</div><div class="line">&#123;</div><div class="line"></div><div class="line">	xxx</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="variable">$xhprof_data</span> = xhprof_disable(); //停止监测，返回运行数据</div><div class="line"><span class="variable">$xhprof_root</span> = <span class="string">'~/Sites/xhprof/'</span>; </div><div class="line">include_once <span class="variable">$xhprof_root</span>.<span class="string">"xhprof_lib/utils/xhprof_lib.php"</span>; </div><div class="line">include_once <span class="variable">$xhprof_root</span>.<span class="string">"xhprof_lib/utils/xhprof_runs.php"</span>;  </div><div class="line"><span class="variable">$xhprof_runs</span> = new XHProfRuns_Default();  </div><div class="line"><span class="variable">$run_id</span> = <span class="variable">$xhprof_runs</span>-&gt;save_run(<span class="variable">$xhprof_data</span>, <span class="string">"xhprof"</span>);</div><div class="line"><span class="built_in">echo</span> <span class="string">'&lt;a href="http://localhost/xhprof/xhprof_html/index.php?</span></div><div class="line">run='.<span class="variable">$run_id</span>.<span class="string">'&amp;source=xhprof" target="_blank"&gt;xhprof统计&lt;/a&gt;'</span>;</div></pre></td></tr></table></figure></p>
-<h2 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h2><blockquote>
-<p>Function Name 函数名<br>– Calls 调用次数<br>– Calls% 调用百分比<br>– Incl. Wall Time (microsec) 调用的包括子函数所有花费时间 以微秒算(一百万分之一秒)<br>– IWall% 调用的包括子函数所有花费时间的百分比<br>– Excl. Wall Time (microsec) 函数执行本身花费的时间，不包括子树执行时间,以微秒算(一百万分之一秒)<br>– EWall% 函数执行本身花费的时间的百分比，不包括子树执行时间<br>– Incl. CPU(microsecs) 调用的包括子函数所有花费的cpu时间。减Incl. Wall Time即为等待cpu的时间<br>&emsp;&emsp;减Excl. Wall Time即为等待cpu的时间<br>– ICpu% Incl. CPU(microsecs)的百分比<br>– Excl. CPU(microsec) 函数执行本身花费的cpu时间，不包括子树执行时间,以微秒算(一百万分之一秒)。<br>– ECPU% Excl. CPU(microsec)的百分比<br>– Incl.MemUse(bytes) 包括子函数执行使用的内存。<br>– IMemUse% Incl.MemUse(bytes)的百分比<br>– Excl.MemUse(bytes) 函数执行本身内存,以字节算<br>– EMemUse% Excl.MemUse(bytes)的百分比<br>– Incl.PeakMemUse(bytes) Incl.MemUse的峰值<br>– IPeakMemUse% Incl.PeakMemUse(bytes) 的峰值百分比<br>– Excl.PeakMemUse(bytes) Excl.MemUse的峰值<br>– EPeakMemUse% EMemUse% 峰值百分比</p>
-</blockquote>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="http://ww3.sinaimg.cn/large/006tNbRwly1ff9f4petzpj311q0f4dhu.jpg"></p>
-<h2 id="安装gd库"><a href="#安装gd库" class="headerlink" title="安装gd库"></a>安装gd库</h2><p>若[View Full CallGraph]点击报错,则可能是因为本机未安装graphviz库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install graphviz</div></pre></td></tr></table></figure></p>
-<h2 id="View-Full-Callgraph"><a href="#View-Full-Callgraph" class="headerlink" title="View Full Callgraph"></a>View Full Callgraph</h2><p><img src="http://ww4.sinaimg.cn/large/006tNbRwly1ff9frp9ew8j30ye0o40x7.jpg"></p>
-<h2 id="注入项目"><a href="#注入项目" class="headerlink" title="注入项目"></a>注入项目</h2><p>在项目唯一入口处添加如下代码<br>xhprof_enable(XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_CPU);<br>//在程序结束后收集数据<br>register_shutdown_function(function() {<br>  $xhprof_data = xhprof_disable();</p>
-<p>  //让数据收集程序在后台运行<br>  if (function_exists(‘fastcgi_finish_request’)) {<br>     fastcgi_finish_request();<br>  }</p>
-<p>  //保存xhprof数据<br>});</p>
-<p>也可以将此段逻辑写入一个php文件如：~/Sites/inject.php,编辑php.ini 配置auto_prepend_file = ~/Sites/inject.php 重启apache</p>
-<p>或使用nginx: fastcgi_param PHP_VALUE “auto_prepend_file=~/Sites/inject.php”;</p>
-<p>此时每次访问均会自动加载性能分析</p>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/02/阻塞与同步/" class="archive-article-date">
+  	<time datetime="2017-05-02T08:50:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/02/阻塞与同步/">阻塞与同步</a>
+    </h1>
+  
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">xhprof</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">阻塞</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">同步</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://panduo.github.io/04/PHP性能分析工具-xhprof/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/02/hello-world/" class="archive-article-date">
+  	<time datetime="2017-05-02T07:56:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+</a>
+        </div>
+    	 
   
-    <a href="/04/websocket-php网页聊天室/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          websocket/php网页聊天室(代码源自网上/出处不明)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/04/configure参数记录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">./configure参数记录</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="PHP性能分析工具-xhprof" data-title="PHP性能分析工具:xhprof" data-url="https://panduo.github.io/04/PHP性能分析工具-xhprof/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"sad"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/02/hello-world/">Hello World</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2017/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -353,8 +290,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -10,12 +10,13 @@
   <title>./configure参数记录 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="列表如下（部分参数未得到解释）： 指定 PHP 安装目录  --prefix=/usr/local/php   指定php.ini位置  --with-config-file-path=/usr/local/php/etc   MySQL安装目录，对mysql的支持  --with-mysql=/usr/local/mysql  mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL">
+<meta name="keywords" content="php,configure,扩展">
 <meta property="og:type" content="article">
 <meta property="og:title" content=".&#x2F;configure参数记录">
 <meta property="og:url" content="https://panduo.github.io/04/configure参数记录/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
 <meta property="og:description" content="列表如下（部分参数未得到解释）： 指定 PHP 安装目录  --prefix=/usr/local/php   指定php.ini位置  --with-config-file-path=/usr/local/php/etc   MySQL安装目录，对mysql的支持  --with-mysql=/usr/local/mysql  mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL">
-<meta property="og:updated_time" content="2017-05-04T08:04:11.000Z">
+<meta property="og:updated_time" content="2017-05-05T06:33:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=".&#x2F;configure参数记录">
 <meta name="twitter:description" content="列表如下（部分参数未得到解释）： 指定 PHP 安装目录  --prefix=/usr/local/php   指定php.ini位置  --with-config-file-path=/usr/local/php/etc   MySQL安装目录，对mysql的支持  --with-mysql=/usr/local/mysql  mysqli扩展技术不仅可以调用MySQL的存储过程、处理MySQL">
@@ -196,6 +197,7 @@
 <li>选项指令 –with-iconv-dir 用于 PHP 编译时指定 iconv 在系统里的路径，否则会扫描默认路径。</li>
 </ul>
 <p>--with-iconv-dir=/usr/local </p>
+<a id="more"></a>
 <blockquote>
 <p>--with-freetype-dir   打开对freetype字体库的支持<br> --with-jpeg-dir   打开对jpeg图片的支持<br> --with-png-dir   打开对png图片的支持<br> --with-zlib-dir   打开zlib库的支持，用于http压缩传输<br> --with-libxml-dir   打开libxml2库的支持<br> --disable-rpath    关闭额外的运行库文件<br> --enable-bcmath    打开图片大小调整,用到zabbix监控的时候用到了这个模块<br> --enable-shmop –enable-sysvsem  这样就使得你的PHP系统可以处理相关的IPC函数了。<br> --enable-inline-optimization  优化线程<br> --with-curl    打开curl浏览工具的支持<br> --with-curlwrappers    运用curl工具打开url流<br> --enable-mbregex<br> --enable-fpm 打上PHP-fpm 补丁后才有这个参数，CGI方式安装的启动程序<br> --enable-mbstring    多字节，字符串的支持<br> --with-mcrypt                    mcrypt算法扩展<br> --with-mhash                     mhash算法扩展<br> --with-gd    打开gd库的支持<br> --enable-gd-native-ttf   支持TrueType字符串函数库<br> --with-openssl      openssl的支持，加密传输https时用到的<br> --enable-pcntl   freeTDS需要用到的，可能是链接mssql 才用到<br> --enable-sockets     打开 sockets 支持<br> --with-xmlrpc    打开xml-rpc的C语言<br> --enable-zip   打开对zip的支持<br> --enable-ftp   打开ftp的支持  </p>
 <p>--with-bz2    打开对bz2文件的支持<br> --without-iconv   关闭iconv函数，字符集间的转换<br> --with-ttf     打开freetype1.*的支持，可以不加了<br> --with-xsl     打开XSLT 文件支持，扩展了libXML2库 ，需要libxslt软件<br> --with-gettext     打开gnu 的gettext 支持，编码库用到<br> --with-pear    打开pear命令的支持，PHP扩展用的<br> --enable-calendar    打开日历扩展功能<br> --enable-exif    图片的元数据支持<br> --enable-magic-quotes    魔术引用的支持 </p>
@@ -212,6 +214,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">configure</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">扩展</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -410,6 +431,62 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">类图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">阻塞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
