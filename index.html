@@ -173,10 +173,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">enum Sport:ExampleProtocol &#123;</div><div class="line">    <span class="keyword">case</span> first(String),second(String),third(String)</div><div class="line">    mutating internal func <span class="function"><span class="title">adjust</span></span>() &#123;</div><div class="line">        switch self &#123;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .first(text):</div><div class="line">            self = .first(text + <span class="string">"first case adjust"</span>)</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .second(text):</div><div class="line">            self = .first(text + <span class="string">"second case adjust"</span>)</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .third(text):</div><div class="line">            self = .first(text + <span class="string">"third case adjust"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    var simpleDescription: String&#123;</div><div class="line">        get&#123;</div><div class="line">            switch self &#123;</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .first(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .second(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .third(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">set</span>&#123;</div><div class="line">            switch self &#123;</div><div class="line">            <span class="keyword">case</span> .first(_):</div><div class="line">                self = .first(newValue)</div><div class="line">            <span class="keyword">case</span> .second(_):</div><div class="line">                self = .second(newValue)</div><div class="line">            <span class="keyword">case</span> .third(_):</div><div class="line">                self = .third(newValue)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    </div><div class="line">&#125;</div><div class="line">&lt;!-- more --&gt;</div><div class="line">var <span class="built_in">test</span> = Sport.first(<span class="string">"xx1"</span>);</div><div class="line">test.simpleDescription</div><div class="line">test.simpleDescription = <span class="string">"xx2"</span></div><div class="line">test.simpleDescription</div><div class="line">test.adjust()</div><div class="line">test.simpleDescription</div></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">enum Sport:ExampleProtocol &#123;</div><div class="line">    <span class="keyword">case</span> first(String),second(String),third(String)</div><div class="line">    mutating internal func <span class="function"><span class="title">adjust</span></span>() &#123;</div><div class="line">        switch self &#123;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .first(text):</div><div class="line">            self = .first(text + <span class="string">"first case adjust"</span>)</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .second(text):</div><div class="line">            self = .first(text + <span class="string">"second case adjust"</span>)</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .third(text):</div><div class="line">            self = .first(text + <span class="string">"third case adjust"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    var simpleDescription: String&#123;</div><div class="line">        get&#123;</div><div class="line">            switch self &#123;</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .first(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .second(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .third(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">set</span>&#123;</div><div class="line">            switch self &#123;</div><div class="line">            <span class="keyword">case</span> .first(_):</div><div class="line">                self = .first(newValue)</div><div class="line">            <span class="keyword">case</span> .second(_):</div><div class="line">                self = .second(newValue)</div><div class="line">            <span class="keyword">case</span> .third(_):</div><div class="line">                self = .third(newValue)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">var <span class="built_in">test</span> = Sport.first(<span class="string">"xx1"</span>);</div><div class="line">test.simpleDescription</div><div class="line">test.simpleDescription = <span class="string">"xx2"</span></div><div class="line">test.simpleDescription</div><div class="line">test.adjust()</div><div class="line">test.simpleDescription</div></pre></td></tr></table></figure>
 <blockquote>
-<p>截图<br><img src="http://ww4.sinaimg.cn/large/006tNbRwly1ffgcnb4fbcj31210gxdit.jpg"></p>
+<p>截图</p>
 </blockquote>
+<p><img src="http://ww4.sinaimg.cn/large/006tNbRwly1ffgcnb4fbcj31210gxdit.jpg"></p>
 
       
 
@@ -568,22 +569,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -593,6 +578,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,6 +609,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vi</a>
               </li>
              
@@ -620,15 +621,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
               </li>
              
               <li class="article-tag-list-item">
