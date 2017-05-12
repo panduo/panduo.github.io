@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://panduo.github.io">
   <title>homebrew安装mysql后无法启动 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mysql报错：无法通过/tmp/mysql.sock启动123$ mysql_install_db --verbose --user=root --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/Cellar/mysql/5.7.18_1/data/$ mysql.server start">
+  <meta name="description" content="mysql报错：无法通过/tmp/mysql.sock启动  123$ mysql_install_db --verbose --user=root --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/Cellar/mysql/5.7.18_1/data/$ mysql.server start">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="homebrew安装mysql后无法启动">
 <meta property="og:url" content="https://panduo.github.io/12/homebrew安装mysql后无法启动/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:description" content="mysql报错：无法通过/tmp/mysql.sock启动123$ mysql_install_db --verbose --user=root --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/Cellar/mysql/5.7.18_1/data/$ mysql.server start">
-<meta property="og:updated_time" content="2017-05-12T15:37:38.000Z">
+<meta property="og:description" content="mysql报错：无法通过/tmp/mysql.sock启动  123$ mysql_install_db --verbose --user=root --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/Cellar/mysql/5.7.18_1/data/$ mysql.server start">
+<meta property="og:updated_time" content="2017-05-12T15:40:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="homebrew安装mysql后无法启动">
-<meta name="twitter:description" content="mysql报错：无法通过/tmp/mysql.sock启动123$ mysql_install_db --verbose --user=root --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/Cellar/mysql/5.7.18_1/data/$ mysql.server start">
+<meta name="twitter:description" content="mysql报错：无法通过/tmp/mysql.sock启动  123$ mysql_install_db --verbose --user=root --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/Cellar/mysql/5.7.18_1/data/$ mysql.server start">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -176,11 +176,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="mysql报错：无法通过-tmp-mysql-sock启动"><a href="#mysql报错：无法通过-tmp-mysql-sock启动" class="headerlink" title="mysql报错：无法通过/tmp/mysql.sock启动"></a>mysql报错：无法通过/tmp/mysql.sock启动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mysql_install_db --verbose --user=root --basedir=<span class="string">"<span class="variable">$(brew --prefix mysql)</span>"</span> --datadir=/usr/<span class="built_in">local</span>/Cellar/mysql/5.7.18_1/data/</div><div class="line"></div><div class="line">$ mysql.server start</div></pre></td></tr></table></figure>
+        <blockquote>
+<p>mysql报错：无法通过/tmp/mysql.sock启动</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mysql_install_db --verbose --user=root --basedir=<span class="string">"<span class="variable">$(brew --prefix mysql)</span>"</span> --datadir=/usr/<span class="built_in">local</span>/Cellar/mysql/5.7.18_1/data/</div><div class="line"></div><div class="line">$ mysql.server start</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="命令行无法登陆mysql-使用安全方式绕过验证"><a href="#命令行无法登陆mysql-使用安全方式绕过验证" class="headerlink" title="命令行无法登陆mysql,使用安全方式绕过验证"></a>命令行无法登陆mysql,使用安全方式绕过验证</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ mysql.server stop</div><div class="line">$ mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;</div><div class="line">$ mysql -u root -p</div><div class="line">$ use mysql</div><div class="line">$ UPDATE user SET authentication_string=PASSWORD(<span class="string">'123456'</span>) <span class="built_in">where</span> USER=<span class="string">'root'</span>;</div><div class="line">$ quit</div></pre></td></tr></table></figure>
-<h4 id="查找安全方式进程"><a href="#查找安全方式进程" class="headerlink" title="查找安全方式进程"></a>查找安全方式进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps <span class="_">-a</span>|grep mysqld</div><div class="line">$ <span class="built_in">kill</span> -9 37525</div><div class="line">$ mysql -u root -p</div><div class="line">$ 123456</div><div class="line"></div><div class="line">MYSQL&gt;</div></pre></td></tr></table></figure>
-<h4 id="网页phpmyadmin可能会报错：Your-password-has-expired-To-log-in-you-must-change-it-using-a-client-that-supports-expired-passwords"><a href="#网页phpmyadmin可能会报错：Your-password-has-expired-To-log-in-you-must-change-it-using-a-client-that-supports-expired-passwords" class="headerlink" title="网页phpmyadmin可能会报错：Your password has expired. To log in you must change it using a client that supports expired passwords"></a>网页phpmyadmin可能会报错：Your password has expired. To log in you must change it using a client that supports expired passwords</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ./mysqladmin -uroot -p password</div><div class="line">$ Enter password:</div><div class="line">$ New password:</div><div class="line">$ Confirm new password:</div></pre></td></tr></table></figure>
+<blockquote>
+<p>命令行无法登陆mysql,使用安全方式绕过验证</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ mysql.server stop</div><div class="line">$ mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;</div><div class="line">$ mysql -u root -p</div><div class="line">$ use mysql</div><div class="line">$ UPDATE user SET authentication_string=PASSWORD(<span class="string">'123456'</span>) <span class="built_in">where</span> USER=<span class="string">'root'</span>;</div><div class="line">$ quit</div></pre></td></tr></table></figure>
+<blockquote>
+<p>查找安全方式进程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps <span class="_">-a</span>|grep mysqld</div><div class="line">$ <span class="built_in">kill</span> -9 37525</div><div class="line">$ mysql -u root -p</div><div class="line">$ 123456</div><div class="line"></div><div class="line">MYSQL&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>网页phpmyadmin可能会报错：Your password has expired. To log in you must change it using a client that supports expired passwords</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ./mysqladmin -uroot -p password</div><div class="line">$ Enter password:</div><div class="line">$ New password:</div><div class="line">$ Confirm new password:</div></pre></td></tr></table></figure>
 
       
 
@@ -430,10 +442,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
@@ -442,15 +450,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vi</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,6 +463,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
               </li>
              
               <li class="article-tag-list-item">
