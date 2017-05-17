@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://panduo.github.io/17/jquery-mobile刷新元素/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
 <meta property="og:description" content="转自 stackoverflow.com Intro:There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhan">
-<meta property="og:updated_time" content="2017-05-17T01:29:34.000Z">
+<meta property="og:updated_time" content="2017-05-17T01:32:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery mobile刷新元素">
 <meta name="twitter:description" content="转自 stackoverflow.com Intro:There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhan">
@@ -271,7 +271,9 @@
 <p>And here’s a live jsFiddle example: <a href="http://jsfiddle.net/Gajotres/nVs9J/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/nVs9J/</a></p>
 <p>There’s one thing to remember. This function will correctly get you maximum available content height and at the same time it can be used to stretch that same content. Unfortunately it cant be used to stretch img to full content height, img tag has an overhead of 3px.</p>
 <h2 id="Methods-of-markup-enhancement-prevention"><a href="#Methods-of-markup-enhancement-prevention" class="headerlink" title="Methods of markup enhancement prevention:"></a>Methods of markup enhancement prevention:</h2><p>This can be done in few ways, sometimes you will need to combine them to achieve a desired result.</p>
-<p>1.Method 1:</p>
+<ul>
+<li>Method 1:</li>
+</ul>
 <p>It can do it by adding this attribute:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data-enhance=<span class="string">"false"</span></div></pre></td></tr></table></figure>
 <p>to the header, content, footer container.</p>
@@ -283,11 +285,15 @@
 <p>Example: <a href="http://jsfiddle.net/Gajotres/UZwpj/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/UZwpj/</a></p>
 <p>To recreate a page again use this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#index'</span>).live(<span class="string">'pagebeforeshow'</span>, <span class="keyword">function</span> (event) &#123;</div><div class="line">    $.mobile.ignoreContentEnabled = <span class="literal">false</span>;</div><div class="line">    $(this).attr(<span class="string">'data-enhance'</span>,<span class="string">'true'</span>);</div><div class="line">    $(this).trigger(<span class="string">"pagecreate"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>2.Method 2:</p>
+<ul>
+<li>Method 2:</li>
+</ul>
 <p>Second option is to do it manually with this line:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data-role=<span class="string">"none"</span></div></pre></td></tr></table></figure>
 <p>Example: <a href="http://jsfiddle.net/Gajotres/LqDke/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/LqDke/</a></p>
-<p>3.Method 3:</p>
+<ul>
+<li>Method 3:</li>
+</ul>
 <p>Certain HTML elements can be prevented from markup enhancement:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).bind(<span class="string">'mobileinit'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">     $.mobile.page.prototype.options.keepNative = <span class="string">"select, input"</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Example: <a href="http://jsfiddle.net/Gajotres/gAGtS/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/gAGtS/</a></p>
@@ -514,18 +520,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
@@ -535,6 +529,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,15 +576,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
