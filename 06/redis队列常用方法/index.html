@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://panduo.github.io/06/redis队列常用方法/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
 <meta property="og:description" content="redis/php 实现消息队列 redis队列常用方法   Blpop 删除，并获得该列表中的第一元素，或阻塞，直到有一个可用  Brpop 删除，并获得该列表中的最后一个元素，或阻塞，直到有一个可用  Brpoplpush  Lindex获取一个元素，通过其索引列表  Linsert在列表中的另一个元素之前或之后插入一个元素  Llen获得队列(List)的长度  Lpop从队列的左边出队一个">
-<meta property="og:updated_time" content="2017-06-06T09:38:14.000Z">
+<meta property="og:updated_time" content="2017-06-06T09:52:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis队列常用方法">
 <meta name="twitter:description" content="redis/php 实现消息队列 redis队列常用方法   Blpop 删除，并获得该列表中的第一元素，或阻塞，直到有一个可用  Brpop 删除，并获得该列表中的最后一个元素，或阻塞，直到有一个可用  Brpoplpush  Lindex获取一个元素，通过其索引列表  Linsert在列表中的另一个元素之前或之后插入一个元素  Llen获得队列(List)的长度  Lpop从队列的左边出队一个">
@@ -223,7 +223,7 @@
 <blockquote>
 <p>消费者 customer.php</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$redis</span> = new Redis();</div><div class="line"><span class="variable">$redis</span>-&gt;connect(<span class="string">'127.0.0.1'</span>,6379);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">while</span>(<span class="variable">$redis</span>-&gt;Llen(<span class="string">'producerQueue'</span>) &gt;0 )&#123;</div><div class="line">	<span class="variable">$tmp</span> = <span class="variable">$redis</span>-&gt;lpop(<span class="string">'producerQueue'</span>);</div><div class="line">	<span class="keyword">if</span>(10%rand(1,10) != 0)&#123;//模拟失败</div><div class="line">		<span class="built_in">echo</span> <span class="variable">$tmp</span>;</div><div class="line">		sleep(5);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="variable">$redis</span>-&gt;rpush(<span class="string">'producerQueue'</span>,<span class="variable">$tmp</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$redis</span> = new Redis();</div><div class="line"><span class="variable">$redis</span>-&gt;connect(<span class="string">'127.0.0.1'</span>,6379);</div><div class="line"></div><div class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">	<span class="keyword">while</span>(<span class="variable">$redis</span>-&gt;Llen(<span class="string">'producerQueue'</span>) &gt;0 )&#123;</div><div class="line">		<span class="variable">$tmp</span> = <span class="variable">$redis</span>-&gt;lpop(<span class="string">'producerQueue'</span>);</div><div class="line">		<span class="keyword">if</span>(10%rand(1,10) == 0)&#123;</div><div class="line">			<span class="built_in">echo</span> <span class="variable">$tmp</span>;</div><div class="line">			sleep(1);</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="variable">$redis</span>-&gt;rpush(<span class="string">'producerQueue'</span>,<span class="variable">$tmp</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	sleep(5);	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="开启php守护进程"><a href="#开启php守护进程" class="headerlink" title="开启php守护进程"></a>开启php守护进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">php producer.php //生产者向队列中插入任务</div><div class="line"></div><div class="line">nohup php customer.php &amp; //开启消费者php守护进程</div></pre></td></tr></table></figure>
 <h3 id="查询消费者守护进程状态"><a href="#查询消费者守护进程状态" class="headerlink" title="查询消费者守护进程状态"></a>查询消费者守护进程状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep customer</div></pre></td></tr></table></figure>
 
@@ -443,11 +443,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,11 +463,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,19 +479,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">configure</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jquery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,7 +491,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
+                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vi</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,11 +515,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vi</a>
+                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
               </li>
              
               <li class="article-tag-list-item">
