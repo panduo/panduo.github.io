@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://panduo.github.io">
-  <title>jquery mobile刷新元素 | 潘铎的个人博客</title>
+  <title>mysql批量修改字段排序规则 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转自 stackoverflow.com Intro:There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhan">
-<meta name="keywords" content="jquery mobile">
+  <meta name="description" content="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation 将所有字符排序规则统一为utf8-unicode-ci  12345678910SELECT CONCAT(&apos;ALTER TABLE `&apos;, table_name, &apos;` MODIFY `&apos;, column_name, &apos;` &apos;, DATA_TYPE, &apos;(&apos;, C">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery mobile刷新元素">
-<meta property="og:url" content="https://panduo.github.io/17/jquery-mobile刷新元素/index.html">
+<meta property="og:title" content="mysql批量修改字段排序规则">
+<meta property="og:url" content="https://panduo.github.io/06/mysql批量修改字段排序规则/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:description" content="转自 stackoverflow.com Intro:There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhan">
-<meta property="og:updated_time" content="2017-05-17T01:32:12.000Z">
+<meta property="og:description" content="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation 将所有字符排序规则统一为utf8-unicode-ci  12345678910SELECT CONCAT(&apos;ALTER TABLE `&apos;, table_name, &apos;` MODIFY `&apos;, column_name, &apos;` &apos;, DATA_TYPE, &apos;(&apos;, C">
+<meta property="og:updated_time" content="2017-06-06T01:20:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery mobile刷新元素">
-<meta name="twitter:description" content="转自 stackoverflow.com Intro:There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhan">
+<meta name="twitter:title" content="mysql批量修改字段排序规则">
+<meta name="twitter:description" content="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation 将所有字符排序规则统一为utf8-unicode-ci  12345678910SELECT CONCAT(&apos;ALTER TABLE `&apos;, table_name, &apos;` MODIFY `&apos;, column_name, &apos;` &apos;, DATA_TYPE, &apos;(&apos;, C">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -156,157 +156,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jquery-mobile刷新元素" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql批量修改字段排序规则" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jquery mobile刷新元素
+      mysql批量修改字段排序规则
     </h1>
   
 
         
-        <a href="/17/jquery-mobile刷新元素/" class="archive-article-date">
-  	<time datetime="2017-05-17T01:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
+        <a href="/06/mysql批量修改字段排序规则/" class="archive-article-date">
+  	<time datetime="2017-06-06T01:18:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>转自 <a href="http://stackoverflow.com/questions/14550396/jquery-mobile-markup-enhancement-of-dynamically-added-content/14550417#14550417" target="_blank" rel="external">stackoverflow.com</a></p>
-<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h2><p>There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhanced with classic jQuery Mobile styling. Because this is rather processing heavy task there need to be some priorities, if possible jQuery Mobile needs to do as less enhancing as possible. Don’t enhance whole page if only one component need’s to be styled.</p>
-<p>What does this all means? When page plugin dispatches a pageInit event, which most widgets use to auto-initialize themselves. it will automatically enhance any instances of the widgets it finds on the page.</p>
-<p>However, if you generate new markup client-side or load in content via Ajax and inject it into a page, you can trigger the create event to handle the auto-initialization for all the plugins contained within the new markup. This can be triggered on any element (even the page div itself), saving you the task of manually initializing each plugin (listview button, select, etc.).</p>
-<p>With this in mind lets discuss enhancement levels. There are three of them and they are sorted from the less resource demanding to higher ones:</p>
-<ol>
-<li>Enhance a single component/widget</li>
-<li>Enhance a page content</li>
-<li>Enhance a full page content (header, content, footer)</li>
-</ol>
-<h2 id="Enhance-a-single-component-widget"><a href="#Enhance-a-single-component-widget" class="headerlink" title="Enhance a single component/widget:"></a>Enhance a single component/widget:</h2><blockquote>
-<p>Important: The below enhancement methods are to be used only on current/active page. For dynamically inserted pages, those pages and their contents will be enhanced once inserted into DOM. Calling any method on dynamically created pages / other than the active page, will result an error.</p>
+        <h2 id="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation"><a href="#mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation" class="headerlink" title="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation"></a>mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation</h2><blockquote>
+<p>将所有字符排序规则统一为utf8-unicode-ci</p>
 </blockquote>
-<a id="more"></a>
-<p>Every jQuery Mobile widget can be enhanced dynamically:</p>
-<p>1. Listview :</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#mylist'</span>).listview(<span class="string">'refresh'</span>);</div></pre></td></tr></table></figure>
-<p>Removing listview elements:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#mylist li'</span>).eq(0).addClass(<span class="string">'ui-screen-hidden'</span>);</div></pre></td></tr></table></figure></p>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/LrAyE/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/LrAyE/</a></p>
-<p>Note that the refresh() method only affects new nodes appended to a list. This is done for performance reasons.</p>
-<p>One of a listview high-points is a filtering functionality. Unfortunately, for some reason, jQuery Mobile will fail to dynamically add filter option to an existing listview. Fortunately there’s a workaround. If possible, remove current listview and add another one with a filer option turned on.</p>
-<p>Here’s a working example: <a href="http://stackoverflow.com/a/15163984/1848600" target="_blank" rel="external">http://stackoverflow.com/a/15163984/1848600</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$(document).on(<span class="string">'pagebeforeshow'</span>, <span class="string">'#index'</span>, <span class="function"><span class="title">function</span></span>()&#123;       </div><div class="line">    $(<span class="string">'&lt;ul&gt;'</span>).attr(&#123;<span class="string">'id'</span>:<span class="string">'test-listview'</span>,<span class="string">'data-role'</span>:<span class="string">'listview'</span>, <span class="string">'data-filter'</span>:<span class="string">'true'</span>,<span class="string">'data-filter-placeholder'</span>:<span class="string">'Search...'</span>&#125;).appendTo(<span class="string">'#index [data-role="content"]'</span>);</div><div class="line">    $(<span class="string">'&lt;li&gt;'</span>).append(<span class="string">'&lt;a href="#"&gt;Audi&lt;/a&gt;'</span>).appendTo(<span class="string">'#test-listview'</span>);</div><div class="line">    $(<span class="string">'&lt;li&gt;'</span>).append(<span class="string">'&lt;a href="#"&gt;Mercedes&lt;/a&gt;'</span>).appendTo(<span class="string">'#test-listview'</span>);</div><div class="line">    $(<span class="string">'&lt;li&gt;'</span>).append(<span class="string">'&lt;a href="#"&gt;Opel&lt;/a&gt;'</span>).appendTo(<span class="string">'#test-listview'</span>);</div><div class="line">    $(<span class="string">'#test-listview'</span>).listview().listview(<span class="string">'refresh'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>2. Button</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'[type="button"]'</span>).button();</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/m4rjZ/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/m4rjZ/</a></p>
-<p>One more thing, you don’t need to use a input element to create a button, it can be even done with a basic div, here’s an example: <a href="http://jsfiddle.net/Gajotres/L9xcN/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/L9xcN/</a></p>
-<p>3. Navbar</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'[data-role="navbar"]'</span>).navbar();</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/w4m2B/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/w4m2B/</a></p>
-<p>Here’s a demo how to add dynamic navbar tab: <a href="http://jsfiddle.net/Gajotres/V6nHp/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/V6nHp/</a></p>
-<p>And one more in pagebeforecreate event: <a href="http://jsfiddle.net/Gajotres/SJG8W/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/SJG8W/</a></p>
-<p>4. Text inputs, Search inputs &amp; Textareas</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'[type="text"]'</span>).textinput();</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/9UQ9k/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/9UQ9k/</a></p>
-<p>5. Sliders &amp; Flip toggle switch</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'[type="range"]'</span>).slider();</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/caCsf/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/caCsf/</a></p>
-<p>Enhancement example during the pagebeforecreate event: <a href="http://jsfiddle.net/Gajotres/NwMLP/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/NwMLP/</a></p>
-<p>Sliders are little bit buggy to dynamically create, read more about it here: <a href="http://stackoverflow.com/a/15708562/1848600" target="_blank" rel="external">http://stackoverflow.com/a/15708562/1848600</a></p>
-<p>6. Checkbox &amp; Radiobox</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'[type="radio"]'</span>).checkboxradio();</div></pre></td></tr></table></figure>
-<p>or if you want to select/deselect another Radiobox/Checkbox element:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"input[type='radio']"</span>).eq(0).attr(<span class="string">"checked"</span>,<span class="literal">false</span>).checkboxradio(<span class="string">"refresh"</span>);</div></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"input[type='radio']"</span>).eq(0).attr(<span class="string">"checked"</span>,<span class="literal">true</span>).checkboxradio(<span class="string">"refresh"</span>);</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/VAG6F/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/VAG6F/</a></p>
-<p>7. Select menu</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'select'</span>).selectmenu();</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/dEXac/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/dEXac/</a></p>
-<p>8. Collapsible</p>
-<p>Unfortunately collapsible element can’t be enhanced through some specific method, so trigger(‘create’) must be used instead.</p>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/ck6uK/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/ck6uK/</a></p>
-<p>9. Table</p>
-<p>Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".selector"</span>).table(<span class="string">"refresh"</span>);</div></pre></td></tr></table></figure>
-<p>While this is a standard way of table enhancement, at this point I can’t make it work. So instead use trigger(‘create’).</p>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/Zqy4n/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/Zqy4n/</a></p>
-<p>10. Panels - New</p>
-<p>Panel Markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.selector'</span>).trigger(<span class="string">'pagecreate'</span>);</div></pre></td></tr></table></figure>
-<p>Markup enhancement of content dynamically added to Panel:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.selector'</span>).trigger(<span class="string">'pagecreate'</span>);</div></pre></td></tr></table></figure>
-<p>Example: <a href="http://jsfiddle.net/Palestinian/PRC8W/" target="_blank" rel="external">http://jsfiddle.net/Palestinian/PRC8W/</a></p>
-<h2 id="Enhance-a-page-content"><a href="#Enhance-a-page-content" class="headerlink" title="Enhance a page content:"></a>Enhance a page content:</h2><p>In case we are generating/rebuilding whole page content it is best to do it all at once and it can be done with this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#index'</span>).trigger(<span class="string">'create'</span>);</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/426NU/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/426NU/</a></p>
-<h2 id="Enhance-a-full-page-content-header-content-footer"><a href="#Enhance-a-full-page-content-header-content-footer" class="headerlink" title="Enhance a full page content (header, content, footer):"></a>Enhance a full page content (header, content, footer):</h2><p>Unfortunately for us trigger(‘create’) can not enhance header and footer markup. In that case we need big guns:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#index'</span>).trigger(<span class="string">'pagecreate'</span>);</div></pre></td></tr></table></figure>
-<p>Enhancement example: <a href="http://jsfiddle.net/Gajotres/DGZcr/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/DGZcr/</a></p>
-<p>This is almost a mystic method because I can’t find it in official jQuery Mobile documentation. Still it is easily found in jQuery Mobile bug tracker with a warning not to use it unless it is really really necessary.</p>
-<p>Note, .trigger(‘pagecreate’); can suppose be used only once per page refresh, I found it to be untrue:</p>
-<p><a href="http://jsfiddle.net/Gajotres/5rzxJ/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/5rzxJ/</a></p>
-<h2 id="3rd-party-enhancement-plugins"><a href="#3rd-party-enhancement-plugins" class="headerlink" title="3rd party enhancement plugins"></a>3rd party enhancement plugins</h2><p>There are several 3rd party enhancement plugins. Some are made as an update to an existing method and some are made to fix broken jQM functionalities.</p>
-<blockquote>
-<p>Button text change</p>
-</blockquote>
-<p>Unfortunately cant found the developer of this plugin. Original SO source: Change button text jquery mobile</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">(<span class="keyword">function</span>($) &#123;</div><div class="line">    /*</div><div class="line">     * Changes the displayed text <span class="keyword">for</span> a jquery mobile button.</div><div class="line">     * Encapsulates the idiosyncracies of how jquery re-arranges the DOM</div><div class="line">     * to display a button <span class="keyword">for</span> either an &lt;a&gt; link or &lt;input <span class="built_in">type</span>=<span class="string">"button"</span>&gt;</div><div class="line">     */</div><div class="line">    $.fn.changeButtonText = <span class="keyword">function</span>(newText) &#123;</div><div class="line">        <span class="built_in">return</span> this.each(<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">            <span class="variable">$this</span> = $(this);</div><div class="line">            <span class="keyword">if</span>( <span class="variable">$this</span>.is(<span class="string">'a'</span>) ) &#123;</div><div class="line">                $(<span class="string">'span.ui-btn-text'</span>,<span class="variable">$this</span>).text(newText);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>( <span class="variable">$this</span>.is(<span class="string">'input'</span>) ) &#123;</div><div class="line">                <span class="variable">$this</span>.val(newText);</div><div class="line">                // go up the tree</div><div class="line">                var ctx = <span class="variable">$this</span>.closest(<span class="string">'.ui-btn'</span>);</div><div class="line">                $(<span class="string">'span.ui-btn-text'</span>,ctx).text(newText);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure>
-<p>Working example: <a href="http://jsfiddle.net/Gajotres/mwB22/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/mwB22/</a></p>
-<h2 id="Get-correct-maximum-content-height"><a href="#Get-correct-maximum-content-height" class="headerlink" title="Get correct maximum content height"></a>Get correct maximum content height</h2><p>In case page header and footer has a constant height content div can be easily set to cover full available space with a little css trick:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#content &#123;</span></div><div class="line">    padding: 0;</div><div class="line">    position : absolute !important; </div><div class="line">    top : 40px !important;  </div><div class="line">    right : 0; </div><div class="line">    bottom : 40px !important;  </div><div class="line">    left : 0 !important;     </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>And here’s a working example with Google maps api3 demo: <a href="http://jsfiddle.net/Gajotres/7kGdE/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/7kGdE/</a></p>
-<p>This method can be used to get correct maximum content height, and it must be used with a pageshow event.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getRealContentHeight</span></span>() &#123;</div><div class="line">    var header = $.mobile.activePage.find(<span class="string">"div[data-role='header']:visible"</span>);</div><div class="line">    var footer = $.mobile.activePage.find(<span class="string">"div[data-role='footer']:visible"</span>);</div><div class="line">    var content = $.mobile.activePage.find(<span class="string">"div[data-role='content']:visible:visible"</span>);</div><div class="line">    var viewport_height = $(window).height();</div><div class="line"></div><div class="line">    var content_height = viewport_height - header.outerHeight() - footer.outerHeight();</div><div class="line">    <span class="keyword">if</span>((content.outerHeight() - header.outerHeight() - footer.outerHeight()) &lt;= viewport_height) &#123;</div><div class="line">        content_height -= (content.outerHeight() - content.height());</div><div class="line">    &#125; </div><div class="line">    <span class="built_in">return</span> content_height;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>And here’s a live jsFiddle example: <a href="http://jsfiddle.net/Gajotres/nVs9J/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/nVs9J/</a></p>
-<p>There’s one thing to remember. This function will correctly get you maximum available content height and at the same time it can be used to stretch that same content. Unfortunately it cant be used to stretch img to full content height, img tag has an overhead of 3px.</p>
-<h2 id="Methods-of-markup-enhancement-prevention"><a href="#Methods-of-markup-enhancement-prevention" class="headerlink" title="Methods of markup enhancement prevention:"></a>Methods of markup enhancement prevention:</h2><p>This can be done in few ways, sometimes you will need to combine them to achieve a desired result.</p>
-<ul>
-<li>Method 1:</li>
-</ul>
-<p>It can do it by adding this attribute:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data-enhance=<span class="string">"false"</span></div></pre></td></tr></table></figure>
-<p>to the header, content, footer container.</p>
-<p>This also needs to be turned in the app loading phase:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).one(<span class="string">"mobileinit"</span>, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    $.mobile.ignoreContentEnabled=<span class="literal">true</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Initialize it before jquery-mobile.js is initialized (look at the example below).</p>
-<p>More about this can be found here:</p>
-<p><a href="http://jquerymobile.com/test/docs/pages/page-scripting.html" target="_blank" rel="external">http://jquerymobile.com/test/docs/pages/page-scripting.html</a></p>
-<p>Example: <a href="http://jsfiddle.net/Gajotres/UZwpj/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/UZwpj/</a></p>
-<p>To recreate a page again use this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#index'</span>).live(<span class="string">'pagebeforeshow'</span>, <span class="keyword">function</span> (event) &#123;</div><div class="line">    $.mobile.ignoreContentEnabled = <span class="literal">false</span>;</div><div class="line">    $(this).attr(<span class="string">'data-enhance'</span>,<span class="string">'true'</span>);</div><div class="line">    $(this).trigger(<span class="string">"pagecreate"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<ul>
-<li>Method 2:</li>
-</ul>
-<p>Second option is to do it manually with this line:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data-role=<span class="string">"none"</span></div></pre></td></tr></table></figure>
-<p>Example: <a href="http://jsfiddle.net/Gajotres/LqDke/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/LqDke/</a></p>
-<ul>
-<li>Method 3:</li>
-</ul>
-<p>Certain HTML elements can be prevented from markup enhancement:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).bind(<span class="string">'mobileinit'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">     $.mobile.page.prototype.options.keepNative = <span class="string">"select, input"</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Example: <a href="http://jsfiddle.net/Gajotres/gAGtS/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/gAGtS/</a></p>
-<p>Again initialize it before jquery-mobile.js is initialized (look at the example below).</p>
-<h2 id="Markup-enhancement-problems"><a href="#Markup-enhancement-problems" class="headerlink" title="Markup enhancement problems:"></a>Markup enhancement problems:</h2><p>Sometimes when creating a component from scratch (like listview) this error will occur:</p>
-<blockquote>
-<p>cannot call methods on listview prior to initialization<br>It can be prevented with component initialization prior to markup enhancement, this is how you can fix this:</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#mylist'</span>).listview().listview(<span class="string">'refresh'</span>);</div></pre></td></tr></table></figure>
-<h2 id="Markup-overrding-problems"><a href="#Markup-overrding-problems" class="headerlink" title="Markup overrding problems:"></a>Markup overrding problems:</h2><p>If for some reason default jQuery Mobile CSS needs to be changed it must be done with !important override. Without it default css styles can not be changed.</p>
-<p>Example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#navbar li &#123;</span></div><div class="line">    background: red !important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>jsFiddle example: <a href="http://jsfiddle.net/Gajotres/vTBGa/" target="_blank" rel="external">http://jsfiddle.net/Gajotres/vTBGa/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SELECT CONCAT(<span class="string">'ALTER TABLE `'</span>, table_name, <span class="string">'` MODIFY `'</span>, column_name, <span class="string">'` '</span>, DATA_TYPE, <span class="string">'('</span>, CHARACTER_MAXIMUM_LENGTH, <span class="string">') CHARACTER SET UTF8 COLLATE utf8_unicode_ci'</span>, (CASE WHEN IS_NULLABLE = <span class="string">'NO'</span> THEN <span class="string">' NOT NULL'</span> ELSE <span class="string">''</span> END), <span class="string">';'</span>)</div><div class="line">FROM information_schema.COLUMNS</div><div class="line">WHERE TABLE_SCHEMA = <span class="string">'database'</span></div><div class="line">AND DATA_TYPE = <span class="string">'varchar'</span></div><div class="line">AND</div><div class="line">(</div><div class="line">    CHARACTER_SET_NAME != <span class="string">'utf8'</span></div><div class="line">    OR</div><div class="line">    COLLATION_NAME != <span class="string">'utf8_unicode_ci'</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<p>复制sql结果批量执行</p>
 
       
 
@@ -320,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jquery mobile</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -376,7 +250,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://panduo.github.io/17/jquery-mobile刷新元素/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://panduo.github.io/06/mysql批量修改字段排序规则/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -390,18 +264,9 @@
   
 <nav id="article-nav">
   
-    <a href="/18/js对象赋值/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js对象赋值
-        
-      </div>
-    </a>
   
-  
-    <a href="/12/homebrew安装mysql后无法启动/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">homebrew安装mysql后无法启动</div>
+    <a href="/18/js对象赋值/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js对象赋值</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -414,7 +279,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="jquery-mobile刷新元素" data-title="jquery mobile刷新元素" data-url="https://panduo.github.io/17/jquery-mobile刷新元素/"></div>
+	<div class="ds-thread" data-thread-key="mysql批量修改字段排序规则" data-title="mysql批量修改字段排序规则" data-url="https://panduo.github.io/06/mysql批量修改字段排序规则/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
