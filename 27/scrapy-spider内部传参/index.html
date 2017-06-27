@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://panduo.github.io">
   <title>scrapy spider内部传参 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系  使用lambda传参  123456789def parse(self,response):	//...	next = &quot;http:&quot;+child.xpath(&apos;a[1]/@href&apos;).extract()[0]	yield scrapy.http.Request(next,callback = l">
+  <meta name="description" content="在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系  使用lambda传参  12345678def parse(self,response):	//...	next = &quot;http:&quot;+child.xpath(&apos;a[1]/@href&apos;).extract()[0]	yield scrapy.http.Request(next,callback = la">
 <meta name="keywords" content="scrapy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="scrapy spider内部传参">
 <meta property="og:url" content="https://panduo.github.io/27/scrapy-spider内部传参/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:description" content="在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系  使用lambda传参  123456789def parse(self,response):	//...	next = &quot;http:&quot;+child.xpath(&apos;a[1]/@href&apos;).extract()[0]	yield scrapy.http.Request(next,callback = l">
-<meta property="og:updated_time" content="2017-06-27T07:42:01.000Z">
+<meta property="og:description" content="在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系  使用lambda传参  12345678def parse(self,response):	//...	next = &quot;http:&quot;+child.xpath(&apos;a[1]/@href&apos;).extract()[0]	yield scrapy.http.Request(next,callback = la">
+<meta property="og:updated_time" content="2017-06-27T09:26:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scrapy spider内部传参">
-<meta name="twitter:description" content="在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系  使用lambda传参  123456789def parse(self,response):	//...	next = &quot;http:&quot;+child.xpath(&apos;a[1]/@href&apos;).extract()[0]	yield scrapy.http.Request(next,callback = l">
+<meta name="twitter:description" content="在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系  使用lambda传参  12345678def parse(self,response):	//...	next = &quot;http:&quot;+child.xpath(&apos;a[1]/@href&apos;).extract()[0]	yield scrapy.http.Request(next,callback = la">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -180,7 +180,11 @@
 <blockquote>
 <p>使用lambda传参</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">def parse(self,response):</div><div class="line">	//...</div><div class="line">	next = <span class="string">"http:"</span>+child.xpath(<span class="string">'a[1]/@href'</span>).extract()[0]</div><div class="line">	yield scrapy.http.Request(next,callback = lambda response,</div><div class="line">		 p_name = p_name: self.parse2(response,p_name))</div><div class="line"></div><div class="line">def parse2(self,response,p_name):</div><div class="line">	pass</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">def parse(self,response):</div><div class="line">	//...</div><div class="line">	next = <span class="string">"http:"</span>+child.xpath(<span class="string">'a[1]/@href'</span>).extract()[0]</div><div class="line">	yield scrapy.http.Request(next,callback = lambda response,</div><div class="line">		 p_name = p_name: self.parse2(response,p_name))</div><div class="line"></div><div class="line">def parse2(self,response,p_name):</div><div class="line">	pass</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用meta</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def parse(self,response):</div><div class="line">	//...</div><div class="line">	yield scrapy.http.Request(next,meta=&#123;<span class="string">'p_name'</span>:p_name&#125;,callback=self.parse2)</div><div class="line"></div><div class="line">def parse2(self,response):</div><div class="line">	p_name = response.meta[<span class="string">'p_name'</span>]</div></pre></td></tr></table></figure>
       
 
       
@@ -437,11 +441,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,15 +469,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,11 +481,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
