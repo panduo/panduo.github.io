@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://panduo.github.io">
   <title>配置newrelic服务器性能监控 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 选择php版本  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败  禁用SIP">
+  <meta name="description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
 <meta name="keywords" content="newrelic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置newrelic服务器性能监控">
 <meta property="og:url" content="https://panduo.github.io/07/配置newrelic服务器性能监控/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 选择php版本  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败  禁用SIP">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg">
+<meta property="og:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fhb5h0vtw5j30kd0f814j.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg">
-<meta property="og:updated_time" content="2017-07-07T03:09:49.000Z">
+<meta property="og:updated_time" content="2017-07-07T03:17:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置newrelic服务器性能监控">
-<meta name="twitter:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 选择php版本  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败  禁用SIP">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg">
+<meta name="twitter:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fhb5h0vtw5j30kd0f814j.jpg">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -181,9 +181,9 @@
       
         <p>剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查</p>
 <p><a href="http://download.newrelic.com/php_agent/release/" target="_blank" rel="external">下载地址</a>   /   <a href="https://rpm.newrelic.com/accounts/1680155/applications/setup#" target="_blank" rel="external">配置地址</a></p>
-<h3 id="选择php版本"><a href="#选择php版本" class="headerlink" title="选择php版本"></a>选择php版本</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg"></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fhb5h0vtw5j30kd0f814j.jpg"></p>
 <blockquote>
-<p>mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败</p>
+<p>mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败</p>
 </blockquote>
 <h3 id="禁用SIP"><a href="#禁用SIP" class="headerlink" title="禁用SIP"></a>禁用SIP</h3><ul>
 <li>重启mac,按住command+R 进入设置页面</li>
@@ -194,7 +194,7 @@
 <a id="more"></a>
 <h3 id="重新安装"><a href="#重新安装" class="headerlink" title="重新安装"></a>重新安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ./newrelic-install install</div></pre></td></tr></table></figure>
 <h3 id="启用SIP"><a href="#启用SIP" class="headerlink" title="启用SIP"></a>启用SIP</h3><p>重复上述禁用过程,终端输入内容改为:csrutil enable</p>
-<h3 id="配置newrelic-ini文件"><a href="#配置newrelic-ini文件" class="headerlink" title="配置newrelic.ini文件"></a>配置newrelic.ini文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newrelic.appname = <span class="string">"/Users/panduo/Downloads/yinglian_jxc_erp/code"</span></div></pre></td></tr></table></figure>
+<h3 id="配置newrelic-ini文件"><a href="#配置newrelic-ini文件" class="headerlink" title="配置newrelic.ini文件"></a>配置newrelic.ini文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//此处可以添加3个项目,用‘;’分隔</div><div class="line">newrelic.appname = <span class="string">"/Users/panduo/Downloads/yinglian_jxc_erp/code"</span></div></pre></td></tr></table></figure>
 <h3 id="重启apache"><a href="#重启apache" class="headerlink" title="重启apache"></a>重启apache</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg"></p>
 
       
@@ -421,14 +421,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">configure</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
@@ -438,6 +430,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
               </li>
              
               <li class="article-tag-list-item">
