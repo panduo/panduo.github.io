@@ -176,14 +176,11 @@
         <p>剖析服务器问题,查找耗时的操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查</p>
 <p><a href="http://download.newrelic.com/php_agent/release/" target="_blank" rel="external">下载地址</a></p>
 <p><a href="https://rpm.newrelic.com/accounts/1680155/applications/setup#" target="_blank" rel="external">配置地址</a></p>
+<h3 id="选择php版本"><a href="#选择php版本" class="headerlink" title="选择php版本"></a>选择php版本</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg"></p>
 <blockquote>
-<p>选择php版本</p>
+<p>mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败</p>
 </blockquote>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg"></p>
-<h3 id="mac环境由于存在系统默认的安全策略SIP-System-Integrity-Protection-禁止修改-usr-bin目录权限-而newrelic安装需要在此目录下添加demo文件-所以会安装失败"><a href="#mac环境由于存在系统默认的安全策略SIP-System-Integrity-Protection-禁止修改-usr-bin目录权限-而newrelic安装需要在此目录下添加demo文件-所以会安装失败" class="headerlink" title="mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败"></a>mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败</h3><blockquote>
-<p>禁用SIP</p>
-</blockquote>
-<ul>
+<h3 id="禁用SIP"><a href="#禁用SIP" class="headerlink" title="禁用SIP"></a>禁用SIP</h3><ul>
 <li>重启mac,按住command+R 进入设置页面</li>
 <li>点击左上角utilities-&gt;terminal打开终端</li>
 <li>输入csrutil disable </li>
@@ -611,18 +608,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -632,6 +617,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
