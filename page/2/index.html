@@ -153,6 +153,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql批量修改字段排序规则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/06/mysql批量修改字段排序规则/">mysql批量修改字段排序规则</a>
+    </h1>
+  
+
+        
+        <a href="/06/mysql批量修改字段排序规则/" class="archive-article-date">
+  	<time datetime="2017-06-06T01:18:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation"><a href="#mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation" class="headerlink" title="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation"></a>mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation</h3><blockquote>
+<p>将所有字符排序规则统一为utf8-unicode-ci</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SELECT CONCAT(<span class="string">'ALTER TABLE `'</span>, table_name, <span class="string">'` MODIFY `'</span>, column_name, <span class="string">'` '</span>, DATA_TYPE, <span class="string">'('</span>, CHARACTER_MAXIMUM_LENGTH, <span class="string">') CHARACTER SET UTF8 COLLATE utf8_unicode_ci'</span>, (CASE WHEN IS_NULLABLE = <span class="string">'NO'</span> THEN <span class="string">' NOT NULL'</span> ELSE <span class="string">''</span> END), <span class="string">';'</span>)</div><div class="line">FROM information_schema.COLUMNS</div><div class="line">WHERE TABLE_SCHEMA = <span class="string">'database'</span></div><div class="line">AND DATA_TYPE = <span class="string">'varchar'</span></div><div class="line">AND</div><div class="line">(</div><div class="line">    CHARACTER_SET_NAME != <span class="string">'utf8'</span></div><div class="line">    OR</div><div class="line">    COLLATION_NAME != <span class="string">'utf8_unicode_ci'</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<p>复制sql结果批量执行</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/06/mysql批量修改字段排序规则/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-js对象赋值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -415,77 +478,9 @@
 
 
   
-    <article id="post-vi快捷键汇总" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/05/vi快捷键汇总/">vi快捷键汇总</a>
-    </h1>
-  
-
-        
-        <a href="/05/vi快捷键汇总/" class="archive-article-date">
-  	<time datetime="2017-05-05T07:38:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>光标控制命令</p>
-</blockquote>
-<p>h或^h    向左移一个字符<br>j或^j或^n   向下移一行<br>k或^p    向上移一行<br>l或空格    向右移一个字符<br>G    移到文件的最后一行<br>nG    移到文件的第n行<br>w    移到下一个字的开头<br>W    移到下一个字的开头，忽略标点符号<br>b    移到前一个字的开头<br>B    移到前一个字的开头，忽略标点符号<br>L    移到屏幕的最后一行<br>M    移到屏幕的中间一行
-        
-          <a class="article-more-a" href="/05/vi快捷键汇总/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">快捷键</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vi</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/05/vi快捷键汇总/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -579,26 +574,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">configure</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
@@ -611,11 +586,27 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,11 +618,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,7 +646,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,14 +666,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">newrelic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
@@ -680,6 +675,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">newrelic</a>
               </li>
             
             <div class="clearfix"></div>
