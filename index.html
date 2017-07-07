@@ -179,7 +179,7 @@
 <script>
     var iframes = document.getElementsByTagName('iframe');
     for (var i = iframes.length - 1; i >= 0; i--){
-        if(!window.applicationCache){    
+        if(window.applicationCache){    
             iframes[i].parentNode.parentNode.parentNode.style.padding = '0';
         }else{
             iframes[i].parentNode.style.padding = '0';
