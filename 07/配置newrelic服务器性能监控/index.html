@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://panduo.github.io">
-  <title>Tag: 阻塞 | 潘铎的个人博客</title>
+  <title>配置newrelic服务器性能监控 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="潘铎的个人博客">
-<meta property="og:url" content="https://panduo.github.io/tags/阻塞/index.html">
+  <meta name="description" content="剖析服务器问题,查找耗时的操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址 配置地址  选择php版本   mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败 禁用SIP  重启">
+<meta name="keywords" content="newrelic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置newrelic服务器性能监控">
+<meta property="og:url" content="https://panduo.github.io/07/配置newrelic服务器性能监控/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
+<meta property="og:description" content="剖析服务器问题,查找耗时的操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址 配置地址  选择php版本   mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败 禁用SIP  重启">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg">
+<meta property="og:updated_time" content="2017-07-07T03:01:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="潘铎的个人博客">
+<meta name="twitter:title" content="配置newrelic服务器性能监控">
+<meta name="twitter:description" content="剖析服务器问题,查找耗时的操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址 配置地址  选择php版本   mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败 禁用SIP  重启">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -151,68 +159,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-配置newrelic服务器性能监控" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/02/阻塞与同步/" class="archive-article-date">
-  	<time datetime="2017-05-02T08:50:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/02/阻塞与同步/">阻塞与同步</a>
+    <h1 class="article-title" itemprop="name">
+      配置newrelic服务器性能监控
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/07/配置newrelic服务器性能监控/" class="archive-article-date">
+  	<time datetime="2017-07-07T01:08:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>剖析服务器问题,查找耗时的操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查</p>
+<p><a href="http://download.newrelic.com/php_agent/release/" target="_blank" rel="external">下载地址</a></p>
+<p><a href="https://rpm.newrelic.com/accounts/1680155/applications/setup#" target="_blank" rel="external">配置地址</a></p>
+<blockquote>
+<p>选择php版本</p>
+</blockquote>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb1zt95s8j30jh093q9l.jpg"></p>
+<h3 id="mac环境由于存在系统默认的安全策略SIP-System-Integrity-Protection-禁止修改-usr-bin目录权限-而newrelic安装需要在此目录下添加demo文件-所以会安装失败"><a href="#mac环境由于存在系统默认的安全策略SIP-System-Integrity-Protection-禁止修改-usr-bin目录权限-而newrelic安装需要在此目录下添加demo文件-所以会安装失败" class="headerlink" title="mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败"></a>mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加demo文件,所以会安装失败</h3><blockquote>
+<p>禁用SIP</p>
+<ul>
+<li>重启mac,按住command+R 进入设置页面</li>
+<li>点击左上角utilities-&gt;terminal打开终端</li>
+<li>输入csrutil disable </li>
+<li>重启</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>重新安装 sudo ./newrelic-install install</p>
+<p>启用SIP<br>重复上述禁用过程,终端输入内容改为:csrutil enable</p>
+<p>配置newrelic.ini文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newrelic.appname = <span class="string">"/Users/panduo/Downloads/yinglian_jxc_erp/code"</span></div></pre></td></tr></table></figure></p>
+<p>重启apache</p>
+</blockquote>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">阻塞</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">同步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">newrelic</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://panduo.github.io/07/配置newrelic服务器性能监控/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/27/scrapy-spider内部传参/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">scrapy spider内部传参</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="配置newrelic服务器性能监控" data-title="配置newrelic服务器性能监控" data-url="https://panduo.github.io/07/配置newrelic服务器性能监控/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"sad"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -235,9 +347,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
