@@ -153,6 +153,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-redis队列常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/06/redis队列常用方法/">redis队列常用方法</a>
+    </h1>
+  
+
+        
+        <a href="/06/redis队列常用方法/" class="archive-article-date">
+  	<time datetime="2017-06-06T09:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="redis-php-实现消息队列"><a href="#redis-php-实现消息队列" class="headerlink" title="redis/php 实现消息队列"></a>redis/php 实现消息队列</h3><blockquote>
+<p>redis队列常用方法</p>
+</blockquote>
+<ul>
+<li><p>Blpop 删除，并获得该列表中的第一元素，或阻塞，直到有一个可用</p>
+</li>
+<li><p>Brpop 删除，并获得该列表中的最后一个元素，或阻塞，直到有一个可用</p>
+</li>
+<li><p>Brpoplpush</p>
+</li>
+<li><p>Lindex获取一个元素，通过其索引列表</p>
+</li>
+<li><p>Linsert在列表中的另一个元素之前或之后插入一个元素</p>
+</li>
+<li><p>Llen获得队列(List)的长度</p>
+</li>
+<li><p>Lpop从队列的左边出队一个元素</p>
+</li>
+<li><p>Lpush从队列的左边入队一个或多个元素</p>
+</li>
+<li><p>Lpushx当队列存在时，从队到左边入队一个元素</p>
+</li>
+<li><p>Lrange从列表中获取指定返回的元素</p>
+</li>
+<li><p>Lrem从列表中删除元素</p>
+</li>
+<li><p>Lset设置队列里面一个元素的值</p>
+</li>
+<li><p>Ltrim修剪到指定范围内的清单</p>
+</li>
+<li><p>Rpop从队列的右边出队一个元素</p>
+</li>
+<li><p>Rpoplpush删除列表中的最后一个元素，将其追加到另一个列表</p>
+</li>
+<li><p>Rpush从队列的右边入队一个元素</p>
+</li>
+<li><p>Rpushx从队列的右边入队一个元素，仅队列存在时有效</p>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/06/redis队列常用方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/06/redis队列常用方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+<!-- 目录内容 -->
+       
+  <!-- 目录内容结束 -->
+  
     <article id="post-mysql批量修改字段排序规则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -425,69 +526,6 @@
        
   <!-- 目录内容结束 -->
   
-    <article id="post-swift枚举实现协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/10/swift枚举实现协议/">swift枚举实现协议</a>
-    </h1>
-  
-
-        
-        <a href="/10/swift枚举实现协议/" class="archive-article-date">
-  	<time datetime="2017-05-10T08:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">enum Sport:ExampleProtocol &#123;</div><div class="line">    <span class="keyword">case</span> first(String),second(String),third(String)</div><div class="line">    mutating internal func <span class="function"><span class="title">adjust</span></span>() &#123;</div><div class="line">        switch self &#123;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .first(text):</div><div class="line">            self = .first(text + <span class="string">"first case adjust"</span>)</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .second(text):</div><div class="line">            self = .first(text + <span class="string">"second case adjust"</span>)</div><div class="line">        <span class="keyword">case</span> <span class="built_in">let</span> .third(text):</div><div class="line">            self = .first(text + <span class="string">"third case adjust"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    var simpleDescription: String&#123;</div><div class="line">        get&#123;</div><div class="line">            switch self &#123;</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .first(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .second(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            <span class="keyword">case</span> <span class="built_in">let</span> .third(text):</div><div class="line">                <span class="built_in">return</span> text</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="built_in">set</span>&#123;</div><div class="line">            switch self &#123;</div><div class="line">            <span class="keyword">case</span> .first(_):</div><div class="line">                self = .first(newValue)</div><div class="line">            <span class="keyword">case</span> .second(_):</div><div class="line">                self = .second(newValue)</div><div class="line">            <span class="keyword">case</span> .third(_):</div><div class="line">                self = .third(newValue)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">var <span class="built_in">test</span> = Sport.first(<span class="string">"xx1"</span>);</div><div class="line">test.simpleDescription</div><div class="line">test.simpleDescription = <span class="string">"xx2"</span></div><div class="line">test.simpleDescription</div><div class="line">test.adjust()</div><div class="line">test.simpleDescription</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/10/swift枚举实现协议/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/10/swift枚举实现协议/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-<!-- 目录内容 -->
-       
-  <!-- 目录内容结束 -->
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -624,19 +662,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jquery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,11 +682,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,10 +707,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
