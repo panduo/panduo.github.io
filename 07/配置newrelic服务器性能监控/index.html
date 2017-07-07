@@ -17,7 +17,7 @@
 <meta property="og:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fhb5h0vtw5j30kd0f814j.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg">
-<meta property="og:updated_time" content="2017-07-07T05:31:46.000Z">
+<meta property="og:updated_time" content="2017-07-07T05:36:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置newrelic服务器性能监控">
 <meta name="twitter:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
@@ -194,7 +194,7 @@
 <a id="more"></a>
 <h3 id="重新安装"><a href="#重新安装" class="headerlink" title="重新安装"></a>重新安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ./newrelic-install install</div></pre></td></tr></table></figure>
 <h3 id="启用SIP"><a href="#启用SIP" class="headerlink" title="启用SIP"></a>启用SIP</h3><p>重复上述禁用过程,终端输入内容改为:csrutil enable</p>
-<h3 id="配置newrelic-ini文件-安装完成后会有显示-也可以使用php-i-或者phpinfo-查询"><a href="#配置newrelic-ini文件-安装完成后会有显示-也可以使用php-i-或者phpinfo-查询" class="headerlink" title="配置newrelic.ini文件(安装完成后会有显示,也可以使用php -i 或者phpinfo()查询)"></a>配置newrelic.ini文件(安装完成后会有显示,也可以使用php -i 或者phpinfo()查询)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//此处可以添加3个项目,用‘;’分隔</div><div class="line">newrelic.appname = <span class="string">"/Users/panduo/Downloads/yinglian_jxc_erp/code"</span></div></pre></td></tr></table></figure>
+<h3 id="配置newrelic-ini文件"><a href="#配置newrelic-ini文件" class="headerlink" title="配置newrelic.ini文件"></a>配置newrelic.ini文件</h3><p>安装完成后会有显示,也可以使用php -i 或者phpinfo()查询<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//此处可以添加3个项目,用‘;’分隔</div><div class="line">newrelic.appname = <span class="string">"/Users/panduo/Downloads/yinglian_jxc_erp/code"</span></div></pre></td></tr></table></figure></p>
 <h3 id="重启apache"><a href="#重启apache" class="headerlink" title="重启apache"></a>重启apache</h3><p>登录newrelic网站[例]：<a href="https://rpm.newrelic.com/accounts/1680155/browser/54666635#/lite?percentile=50&amp;_k=ic7uen" target="_blank" rel="external">https://rpm.newrelic.com/accounts/1680155/browser/54666635#/lite?percentile=50&amp;_k=ic7uen</a></p>
 <p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg"></p>
 
@@ -338,7 +338,7 @@
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#禁用SIP"><span class="toc-number">2.</span> <span class="toc-text">禁用SIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新安装"><span class="toc-number">3.</span> <span class="toc-text">重新安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用SIP"><span class="toc-number">4.</span> <span class="toc-text">启用SIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置newrelic-ini文件-安装完成后会有显示-也可以使用php-i-或者phpinfo-查询"><span class="toc-number">5.</span> <span class="toc-text">配置newrelic.ini文件(安装完成后会有显示,也可以使用php -i 或者phpinfo()查询)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启apache"><span class="toc-number">6.</span> <span class="toc-text">重启apache</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#禁用SIP"><span class="toc-number">2.</span> <span class="toc-text">禁用SIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新安装"><span class="toc-number">3.</span> <span class="toc-text">重新安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用SIP"><span class="toc-number">4.</span> <span class="toc-text">启用SIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置newrelic-ini文件"><span class="toc-number">5.</span> <span class="toc-text">配置newrelic.ini文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启apache"><span class="toc-number">6.</span> <span class="toc-text">重启apache</span></a></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -485,11 +485,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +529,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
               </li>
              
               <li class="article-tag-list-item">
