@@ -17,7 +17,7 @@
 <meta property="og:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fhb5h0vtw5j30kd0f814j.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fhb514p1jmj311i0i5jvn.jpg">
-<meta property="og:updated_time" content="2017-07-07T03:28:59.000Z">
+<meta property="og:updated_time" content="2017-07-07T05:31:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置newrelic服务器性能监控">
 <meta name="twitter:description" content="剖析服务器问题,查找耗时操作。之前使用了xhprof 但是效果不是很直观,此次使用newrelic,图形化的界面更加方便统计与排查 下载地址   /   配置地址 安装  mac环境由于存在系统默认的安全策略SIP(System Integrity Protection),禁止修改/usr/bin目录权限,而newrelic安装需要在此目录下添加daemon即守护进程文件,所以会安装失败  禁用S">
@@ -329,7 +329,33 @@
 
   
 
-
+<!-- 目录内容 -->
+  
+      <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+      </p>
+      <div id="toc-article" class="toc-article">
+          <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#禁用SIP"><span class="toc-number">2.</span> <span class="toc-text">禁用SIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新安装"><span class="toc-number">3.</span> <span class="toc-text">重新安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用SIP"><span class="toc-number">4.</span> <span class="toc-text">启用SIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置newrelic-ini文件-安装完成后会有显示-也可以使用php-i-或者phpinfo-查询"><span class="toc-number">5.</span> <span class="toc-text">配置newrelic.ini文件(安装完成后会有显示,也可以使用php -i 或者phpinfo()查询)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启apache"><span class="toc-number">6.</span> <span class="toc-text">重启apache</span></a></li></ol>
+     </div>
+     <script type="text/javascript">
+      function showToc(){
+          var toc_article = document.getElementById("toc-article");
+          var show_toc_btn = document.getElementById("show-toc-btn");
+          toc_article.setAttribute("style","display:block");
+          show_toc_btn.setAttribute("style","display:none");
+          };
+      function showBtn(){
+          var toc_article = document.getElementById("toc-article");
+          var show_toc_btn = document.getElementById("show-toc-btn");
+          toc_article.setAttribute("style","display:none");
+          show_toc_btn.setAttribute("style","display:block");
+          };
+     </script>
+       
+  <!-- 目录内容结束 -->
           </div>
         </div>
       </div>
@@ -431,6 +457,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -451,7 +481,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,7 +493,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,18 +505,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
@@ -491,7 +513,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +525,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">newrelic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,6 +546,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">newrelic</a>
               </li>
             
             <div class="clearfix"></div>
