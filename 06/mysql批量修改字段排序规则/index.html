@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://panduo.github.io/06/mysql批量修改字段排序规则/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
 <meta property="og:description" content="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation 将所有字符排序规则统一为utf8-unicode-ci  12345678910SELECT CONCAT(&apos;ALTER TABLE `&apos;, table_name, &apos;` MODIFY `&apos;, column_name, &apos;` &apos;, DATA_TYPE, &apos;(&apos;, C">
-<meta property="og:updated_time" content="2017-06-06T01:20:54.000Z">
+<meta property="og:updated_time" content="2017-07-07T03:35:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql批量修改字段排序规则">
 <meta name="twitter:description" content="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation 将所有字符排序规则统一为utf8-unicode-ci  12345678910SELECT CONCAT(&apos;ALTER TABLE `&apos;, table_name, &apos;` MODIFY `&apos;, column_name, &apos;` &apos;, DATA_TYPE, &apos;(&apos;, C">
@@ -176,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation"><a href="#mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation" class="headerlink" title="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation"></a>mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation</h2><blockquote>
+        <h3 id="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation"><a href="#mysql在创建视图时，可能因字段排序规则不同而报错：Illegal-mix-of-collations-for-operation" class="headerlink" title="mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation"></a>mysql在创建视图时，可能因字段排序规则不同而报错：Illegal mix of collations for operation</h3><blockquote>
 <p>将所有字符排序规则统一为utf8-unicode-ci</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SELECT CONCAT(<span class="string">'ALTER TABLE `'</span>, table_name, <span class="string">'` MODIFY `'</span>, column_name, <span class="string">'` '</span>, DATA_TYPE, <span class="string">'('</span>, CHARACTER_MAXIMUM_LENGTH, <span class="string">') CHARACTER SET UTF8 COLLATE utf8_unicode_ci'</span>, (CASE WHEN IS_NULLABLE = <span class="string">'NO'</span> THEN <span class="string">' NOT NULL'</span> ELSE <span class="string">''</span> END), <span class="string">';'</span>)</div><div class="line">FROM information_schema.COLUMNS</div><div class="line">WHERE TABLE_SCHEMA = <span class="string">'database'</span></div><div class="line">AND DATA_TYPE = <span class="string">'varchar'</span></div><div class="line">AND</div><div class="line">(</div><div class="line">    CHARACTER_SET_NAME != <span class="string">'utf8'</span></div><div class="line">    OR</div><div class="line">    COLLATION_NAME != <span class="string">'utf8_unicode_ci'</span></div><div class="line">);</div></pre></td></tr></table></figure>
@@ -415,7 +415,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color5">configure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,11 +435,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">configure</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">扩展</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,19 +471,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vi</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">newrelic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,6 +480,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">备忘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">newrelic</a>
               </li>
              
               <li class="article-tag-list-item">
