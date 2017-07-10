@@ -153,6 +153,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-scrapy-spider内部传参" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/27/scrapy-spider内部传参/">scrapy spider内部传参</a>
+    </h1>
+  
+
+        
+        <a href="/27/scrapy-spider内部传参/" class="archive-article-date">
+  	<time datetime="2017-06-27T07:33:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在scrapy的spider中 有时会有多个处理函数处理不同的url,这些函数互相可能有依赖关系</p>
+<blockquote>
+<p>使用lambda传参</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">def parse(self,response):</div><div class="line">	//...</div><div class="line">	next = <span class="string">"http:"</span>+child.xpath(<span class="string">'a[1]/@href'</span>).extract()[0]</div><div class="line">	yield scrapy.http.Request(next,callback = lambda response,</div><div class="line">		 p_name = p_name: self.parse2(response,p_name))</div><div class="line"></div><div class="line">def parse2(self,response,p_name):</div><div class="line">	pass</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用meta</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def parse(self,response):</div><div class="line">	//...</div><div class="line">	yield scrapy.http.Request(next,meta=&#123;<span class="string">'p_name'</span>:p_name&#125;,callback=self.parse2)</div><div class="line"></div><div class="line">def parse2(self,response):</div><div class="line">	p_name = response.meta[<span class="string">'p_name'</span>]</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">scrapy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/27/scrapy-spider内部传参/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+<!-- 目录内容 -->
+       
+  <!-- 目录内容结束 -->
+  
     <article id="post-ios浏览器背景固定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -445,81 +513,6 @@
        
   <!-- 目录内容结束 -->
   
-    <article id="post-jquery-mobile刷新元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/17/jquery-mobile刷新元素/">jquery mobile刷新元素</a>
-    </h1>
-  
-
-        
-        <a href="/17/jquery-mobile刷新元素/" class="archive-article-date">
-  	<time datetime="2017-05-17T01:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>转自 <a href="http://stackoverflow.com/questions/14550396/jquery-mobile-markup-enhancement-of-dynamically-added-content/14550417#14550417" target="_blank" rel="external">stackoverflow.com</a></p>
-<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro:"></a>Intro:</h2><p>There are several ways of enhancing dynamically created content markup. It is just not enough to dynamically add new content to jQuery Mobile page, new content must be enhanced with classic jQuery Mobile styling. Because this is rather processing heavy task there need to be some priorities, if possible jQuery Mobile needs to do as less enhancing as possible. Don’t enhance whole page if only one component need’s to be styled.</p>
-<p>What does this all means? When page plugin dispatches a pageInit event, which most widgets use to auto-initialize themselves. it will automatically enhance any instances of the widgets it finds on the page.</p>
-<p>However, if you generate new markup client-side or load in content via Ajax and inject it into a page, you can trigger the create event to handle the auto-initialization for all the plugins contained within the new markup. This can be triggered on any element (even the page div itself), saving you the task of manually initializing each plugin (listview button, select, etc.).</p>
-<p>With this in mind lets discuss enhancement levels. There are three of them and they are sorted from the less resource demanding to higher ones:</p>
-<ol>
-<li>Enhance a single component/widget</li>
-<li>Enhance a page content</li>
-<li>Enhance a full page content (header, content, footer)</li>
-</ol>
-<h2 id="Enhance-a-single-component-widget"><a href="#Enhance-a-single-component-widget" class="headerlink" title="Enhance a single component/widget:"></a>Enhance a single component/widget:</h2><blockquote>
-<p>Important: The below enhancement methods are to be used only on current/active page. For dynamically inserted pages, those pages and their contents will be enhanced once inserted into DOM. Calling any method on dynamically created pages / other than the active page, will result an error.</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/17/jquery-mobile刷新元素/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jquery mobile</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/17/jquery-mobile刷新元素/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-<!-- 目录内容 -->
-       
-  <!-- 目录内容结束 -->
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -616,7 +609,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">猫</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,10 +633,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">configure</a>
               </li>
              
@@ -644,19 +641,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PHP_UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color2">猫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,15 +649,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jquery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color4">jquery mobile</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,7 +685,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,11 +697,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
