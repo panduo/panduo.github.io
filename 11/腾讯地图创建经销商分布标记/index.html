@@ -8,13 +8,18 @@
   <link rel="dns-prefetch" href="https://panduo.github.io">
   <title>腾讯地图创建经销商分布标记 | 潘铎的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="最近有个业务需求,在全国范围内显示经销商的分布,第一个想到百度地图,但是新版的各种bug,图标也修改不了,每次修改都要清除浏览器缓存,实在是费劲。  php端根据详细地址获取经纬度1234567$url = &quot;http://apis.map.qq.com/ws/geocoder/v1/?address=&amp;#123;$address&amp;#125;&amp;amp;key=xxxxxxxx&amp;amp;outpu">
+<meta property="og:type" content="article">
 <meta property="og:title" content="腾讯地图创建经销商分布标记">
 <meta property="og:url" content="https://panduo.github.io/11/腾讯地图创建经销商分布标记/index.html">
 <meta property="og:site_name" content="潘铎的个人博客">
-<meta property="og:updated_time" content="2017-07-11T08:06:06.000Z">
+<meta property="og:description" content="最近有个业务需求,在全国范围内显示经销商的分布,第一个想到百度地图,但是新版的各种bug,图标也修改不了,每次修改都要清除浏览器缓存,实在是费劲。  php端根据详细地址获取经纬度1234567$url = &quot;http://apis.map.qq.com/ws/geocoder/v1/?address=&amp;#123;$address&amp;#125;&amp;amp;key=xxxxxxxx&amp;amp;outpu">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fhg23jn30zj30r90k0e40.jpg">
+<meta property="og:updated_time" content="2017-07-11T09:08:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="腾讯地图创建经销商分布标记">
+<meta name="twitter:description" content="最近有个业务需求,在全国范围内显示经销商的分布,第一个想到百度地图,但是新版的各种bug,图标也修改不了,每次修改都要清除浏览器缓存,实在是费劲。  php端根据详细地址获取经纬度1234567$url = &quot;http://apis.map.qq.com/ws/geocoder/v1/?address=&amp;#123;$address&amp;#125;&amp;amp;key=xxxxxxxx&amp;amp;outpu">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fhg23jn30zj30r90k0e40.jpg">
   
     <link rel="alternative" href="/atom.xml" title="潘铎的个人博客" type="application/atom+xml">
   
@@ -172,7 +177,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>最近有个业务需求,在全国范围内显示经销商的分布,第一个想到百度地图,但是新版的各种bug,图标也修改不了,每次修改都要清除浏览器缓存,实在是费劲。</p>
+</blockquote>
+<h3 id="php端根据详细地址获取经纬度"><a href="#php端根据详细地址获取经纬度" class="headerlink" title="php端根据详细地址获取经纬度"></a>php端根据详细地址获取经纬度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$url</span> = <span class="string">"http://apis.map.qq.com/ws/geocoder/v1/?address=&#123;<span class="variable">$address</span>&#125;&amp;key=xxxxxxxx&amp;output=json"</span>;</div><div class="line"><span class="variable">$curl</span> = curl_init();</div><div class="line">curl_setopt(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);</div><div class="line">curl_setopt(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, 1);</div><div class="line"><span class="variable">$res</span> = curl_exec(<span class="variable">$curl</span>);</div><div class="line">curl_close(<span class="variable">$curl</span>);</div><div class="line"><span class="variable">$res</span> = json_decode(<span class="variable">$res</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="腾讯地图js"><a href="#腾讯地图js" class="headerlink" title="腾讯地图js:"></a>腾讯地图js:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> alliances = &lt;?php echo $alliances?&gt;;</div><div class="line"></div><div class="line">function init() &#123;</div><div class="line">    var center = new qq.maps.LatLng(39.916527,116.397128);</div><div class="line">    var map = new qq.maps.Map(document.getElementById("container"), &#123;</div><div class="line">        center: center,</div><div class="line">        zoom: 5</div><div class="line">    &#125;);</div><div class="line">    var infoWin = new qq.maps.InfoWindow(&#123;</div><div class="line">        map: map</div><div class="line">    &#125;);</div><div class="line">    var latlngs = [],latlngsdesc = [],tmp;</div><div class="line">    for (var i = 0; i &lt; alliances.length; i++) &#123;</div><div class="line">    	tmp = alliances[i];</div><div class="line">    	latlngs.push(new qq.maps.LatLng(tmp.lat,tmp.lng));</div><div class="line">    	latlngsdesc.push(&#123;name:tmp.name,address:tmp.address,email:tmp.email,phone:tmp.phone&#125;)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for(var i = 0;i &lt; latlngs.length; i++) &#123;</div><div class="line">        (function(n)&#123;</div><div class="line">        	var img = new qq.maps.MarkerImage("http://www.erplocal.com/48x48.png");</div><div class="line">            var marker = new qq.maps.Marker(&#123;</div><div class="line">                position: latlngs[n],</div><div class="line">                map: map,</div><div class="line">                animation: qq.maps.MarkerAnimation.DROP,</div><div class="line">                icon: img</div><div class="line"></div><div class="line">            &#125;);</div><div class="line">            qq.maps.event.addListener(marker, 'click', function() &#123;</div><div class="line">                infoWin.open();</div><div class="line">                var info = latlngsdesc[n];</div><div class="line">                infoWin.setContent('&lt;div style="text-align:center;white-space:'+</div><div class="line">                'nowrap;margin:10px;"&gt;'+info.name+'&lt;br/&gt;'+info.address+'&lt;br/&gt;'+info.phone+'&lt;/div&gt;');</div><div class="line">                infoWin.setPosition(latlngs[n]);</div><div class="line">            &#125;);</div><div class="line">        &#125;)(i);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fhg23jn30zj30r90k0e40.jpg"></p>
+
       
 
       
@@ -302,7 +314,7 @@
       	</div>
     </div>
   </div>
-  <script>
+  <script type="text/javascript">
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");
@@ -387,22 +399,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">猫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -423,7 +419,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">猫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -432,6 +440,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,7 +471,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,14 +488,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vi</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">

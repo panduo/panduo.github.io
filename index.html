@@ -173,6 +173,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <blockquote>
+<p>最近有个业务需求,在全国范围内显示经销商的分布,第一个想到百度地图,但是新版的各种bug,图标也修改不了,每次修改都要清除浏览器缓存,实在是费劲。</p>
+</blockquote>
+<h3 id="php端根据详细地址获取经纬度"><a href="#php端根据详细地址获取经纬度" class="headerlink" title="php端根据详细地址获取经纬度"></a>php端根据详细地址获取经纬度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$url</span> = <span class="string">"http://apis.map.qq.com/ws/geocoder/v1/?address=&#123;<span class="variable">$address</span>&#125;&amp;key=xxxxxxxx&amp;output=json"</span>;</div><div class="line"><span class="variable">$curl</span> = curl_init();</div><div class="line">curl_setopt(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);</div><div class="line">curl_setopt(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, 1);</div><div class="line"><span class="variable">$res</span> = curl_exec(<span class="variable">$curl</span>);</div><div class="line">curl_close(<span class="variable">$curl</span>);</div><div class="line"><span class="variable">$res</span> = json_decode(<span class="variable">$res</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/11/腾讯地图创建经销商分布标记/#more">more >></a>
         
       
 
@@ -474,7 +480,7 @@
       	</div>
     </div>
   </div>
-  <script>
+  <script type="text/javascript">
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");
@@ -559,22 +565,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">猫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -595,7 +585,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xhprof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">猫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,6 +606,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,7 +637,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,14 +654,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vi</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
